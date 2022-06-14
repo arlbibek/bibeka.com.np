@@ -1,0 +1,26 @@
+.nav {
+  width: max-content;
+  padding: 0 0.3rem;
+  border-radius: var(--brd);
+  background-color: var(--bg-secondary);
+  margin-bottom: 1rem;
+  box-shadow: var(--shadow);
+}
+.nav ul {
+  list-style: none;
+  display: flex;
+}
+.nav ul li {
+  padding-right: 0.5rem;
+  border-right: 1px solid var(--bg-primary);
+}
+.nav ul li:last-child {
+  border-right: 0px;
+}
+
+.nav ul li a {
+  text-decoration: none;
+}
+.nav ul li:hover {
+  color: var(--my-yellow);
+}

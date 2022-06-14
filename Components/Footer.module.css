@@ -1,0 +1,69 @@
+.footer {
+  text-align: center;
+  font-family: "Titillium Web";
+}
+
+.nav,
+.main {
+  padding: 0.7rem;
+}
+
+.nav,
+.main {
+  margin-top: 1.5rem;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  color: var(--text-secondary);
+}
+
+.scroll a {
+  cursor: pointer;
+  font-size: small;
+  text-decoration: none;
+  padding: 1px 5px;
+  border-radius: 11px;
+  filter: none;
+  background-color: var(--bg-secondary);
+  color: var(--text-secondary);
+}
+.scroll a:hover {
+  color: var(--my-yellow);
+  background-color: transparent;
+}
+
+.nav {
+  background-color: var(--bg-secondary);
+}
+.nav ul {
+  list-style: none;
+  color: var(--text-secondary);
+  font-size: 0.7rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: right;
+}
+/* Larger than phablet */
+@media (min-width: 550px) {
+  .nav ul {
+    justify-content: space-around;
+  }
+}
+
+.nav ul li a {
+  text-decoration: none;
+  padding: 0.1rem 0.4rem;
+  font-size: 0.9rem;
+}
+.nav ul li a:hover {
+  text-decoration: underline;
+}
+.nav ul li .sup {
+  color: var(--favicon-primary);
+  filter: none;
+}
