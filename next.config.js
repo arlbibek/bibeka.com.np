@@ -8,6 +8,9 @@ const nextConfig = {
     const masterdb =
       "https://docs.google.com/spreadsheets/d/18KHUxdSNkJD4Ln9xjsEPR67d-gcCYXgmo0bgNui3DTk/edit?usp=sharing";
     const nepaliCalendar = "https://nepalicalendar.rat32.com/";
+    const easyaccess =
+      "https://drive.google.com/drive/folders/1F_OYMSpHlls1ej4KZSX6g2BDkKGt446T";
+    const easyupload = "https://mega.nz/megadrop/fzUsZP-DxgM";
     return [
       // GitHub
       {
@@ -25,6 +28,7 @@ const nextConfig = {
         destination: github,
         permanent: true,
       },
+
       // YouTube
       {
         source: "/YouTube",
@@ -46,10 +50,23 @@ const nextConfig = {
         destination: masterdb,
         permanent: true,
       },
+
       // nepali calendar
       {
         source: "/cal",
         destination: nepaliCalendar,
+        permanent: true,
+      },
+
+      // easy
+      {
+        source: "/easyaccess",
+        destination: easyaccess,
+        permanent: true,
+      },
+      {
+        source: "/easyupload",
+        destination: easyupload,
         permanent: true,
       },
     ];
