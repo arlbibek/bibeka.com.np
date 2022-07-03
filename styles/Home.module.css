@@ -8,20 +8,6 @@
   align-items: center;
   text-align: center;
 }
-.main::before {
-  content: "";
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-
-  background-image: url("../public/wt.gif");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  opacity: 0.01;
-}
 
 .title,
 .status,
