@@ -22,7 +22,7 @@ export default function Header(props) {
         content={
           props.description
             ? props.description
-            : "A portfolio website of Bibek Aryal. A Computer Networking & IT Security graduate from Islington College, Kathmandu, Nepal."
+            : "A portfolio website of Bibek Aryal. A Computer Networking & IT Security graduate from Islington College, Kathmandu, Nepal. Making the world a better place with technology."
         }
       />
       <meta
