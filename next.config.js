@@ -11,6 +11,7 @@ const nextConfig = {
     const easyaccess =
       "https://drive.google.com/drive/folders/1F_OYMSpHlls1ej4KZSX6g2BDkKGt446T";
     const easyupload = "https://mega.nz/megadrop/fzUsZP-DxgM";
+    const viewresume = "https://docs.google.com/document/d/e/2PACX-1vQ8jxqzqDE3TASPvv9BLWcCXoL8P6JXGwyLkmahguJGRJw2DrQxcDMu-OVJxdcLdGJswUNpP0Tefvt8/pub"
     return [
       // GitHub
       {
@@ -67,6 +68,12 @@ const nextConfig = {
       {
         source: "/easyupload",
         destination: easyupload,
+        permanent: true,
+      },
+      // view resume
+       {
+        source: "/resume",
+        destination: viewresume,
         permanent: true,
       },
     ];
