@@ -12,7 +12,6 @@ export default function Head() {
 
       <title>Bibek Aryal</title>
       <meta content="width=device-width, initial-scale=1" name="viewport" />
-      <link rel="icon" href="images/favicon.png" />
       <meta
         name="description"
         content={
@@ -25,8 +24,8 @@ export default function Head() {
           "Bibek, Aryal, Networking, IT, Security, Islington, College, Nepal"
         }
       />
-      <link rel="icon" type="image/png" href="/favicon.ico" />
-      <link rel="apple-touch-icon" href="/favicon.png" />
+      <link rel="icon" type="image/png" href="images/favicon.ico" />
+      <link rel="apple-touch-icon" href="images/favicon.png" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     </>
