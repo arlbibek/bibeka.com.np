@@ -4,6 +4,13 @@ A portfolio website made using [NEXT.js](https://nextjs.org/ "Visit Next.js") & 
 
 Visit webpage [bibeka.com.np](https://bibeka.com.np/).
 
+## built with
+
+|              |                                             |
+| ------------ | ------------------------------------------- |
+| Next.js `13` | [nextjs.org](https://nextjs.org/)           |
+| Tailwind CSS | [tailwindcss.com](https://tailwindcss.com/) |
+
 ---
 
 <details>
