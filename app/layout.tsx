@@ -1,5 +1,5 @@
 import "../styles/globals.css";
-
+import "bootstrap-icons/font/bootstrap-icons.css";
 import { Merriweather } from "@next/font/google";
 
 const merriweather = Merriweather({

@@ -1,7 +1,6 @@
-"use-client";
+"use client";
 
 import Image from "next/image";
-
 import plants from "../public/images/plants.png";
 
 export default function Home() {
