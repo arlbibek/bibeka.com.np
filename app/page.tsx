@@ -5,15 +5,13 @@ import plants from "../public/images/plants.png";
 
 export default function Home() {
   return (
-    <>
-      <main className="bg-[#1c1b22] min-h-screen grid place-items-center text-center font-serif">
-        <div className="transition-all duration-300">
-          <Header />
-          <Status />
-          <Social />
-        </div>
-      </main>
-    </>
+    <main className="bg-[#1c1b22] min-h-screen grid place-items-center text-center font-serif">
+      <div className="transition-all duration-300">
+        <Header />
+        <Status />
+        <Social />
+      </div>
+    </main>
   );
 }
 

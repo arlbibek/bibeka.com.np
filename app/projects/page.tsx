@@ -57,97 +57,95 @@ export default async function ProjectsPage() {
     })
   );
   return (
-    <>
-      <main className="mb-1 text-gray-800 dark:text-gray-100 text-center lg:text-left p-5 dark:bg-slate-900 font-serif">
-        <ProjectHeader />
-        <section>
-          <div className="container mx-auto p-10 md:py-20 px-0 md:p-10 md:px-0  max-w-5xl ">
-            {repos.map(
-              (repo, index) =>
-                repo && (
+    <main className="text-gray-800 dark:text-gray-100 text-center lg:text-left p-5 dark:bg-slate-900 font-serif">
+      <ProjectHeader />
+      <section>
+        <div className="container mx-auto p-10 md:py-20 px-0 md:p-10 md:px-0  max-w-5xl ">
+          {repos.map(
+            (repo, index) =>
+              repo && (
+                <div
+                  id={repo.name}
+                  key={index}
+                  className={`relative transform duration-500 bg-transparent max-w-4xl mb-6  ${
+                    projects[index].preview && "lg:mb-32"
+                  }`}
+                >
+                  {projects[index].preview && (
+                    <img
+                      className="rounded-t-xl lg:rounded-xl"
+                      src={projects[index].preview}
+                      alt={`${repo.full_name} social preview image`}
+                    />
+                  )}
                   <div
-                    id={repo.name}
-                    key={index}
-                    className={`relative transform duration-500 bg-transparent max-w-4xl mb-6  ${
-                      projects[index].preview && "lg:mb-32"
+                    className={`${
+                      !projects[index].preview &&
+                      "rounded-xl hover:scale-[1.01]"
+                    } p-5 w-full drop-shadow-xl bg-white transition duration-500 dark:bg-gradient-to-r from-slate-800  to-slate-900 hover:to-slate-800 ${
+                      projects[index].preview &&
+                      "lg:max-w-lg  lg:absolute top-[60%] left-[30rem] lg:hover:-translate-y-4 rounded-b-xl lg:rounded-xl "
                     }`}
                   >
-                    {projects[index].preview && (
-                      <img
-                        className="rounded-t-xl lg:rounded-xl"
-                        src={projects[index].preview}
-                        alt={`${repo.full_name} social preview image`}
-                      />
-                    )}
-                    <div
-                      className={`${
-                        !projects[index].preview &&
-                        "rounded-xl hover:scale-[1.01]"
-                      } p-5 w-full drop-shadow-xl bg-white transition duration-500 dark:bg-gradient-to-r from-slate-800  to-slate-900 hover:to-slate-800 ${
-                        projects[index].preview &&
-                        "lg:max-w-lg  lg:absolute top-[60%] left-[30rem] lg:hover:-translate-y-4 rounded-b-xl lg:rounded-xl "
-                      }`}
-                    >
-                      <div className="flex justify-between text-sm">
-                        <a
-                          href={repo.html_url}
-                          target="_blank"
-                          rel="noreferrer noopener"
-                          title={`View on GitHub`}
-                        >
-                          <i className="bi bi-github mr-2" />
-                          <span className={`group hover:underline`}>
-                            {repo.full_name}
-                            <i
-                              className={`bi bi-box-arrow-up-right pl-1  hidden group-hover:inline`}
-                            ></i>
-                          </span>
-                        </a>
-                        <p
-                          className="text-gray-400"
-                          title={`Last updated at: ${formatDate(
-                            repo.updated_at
-                          )}`}
-                        >
-                          {formatDate(repo.updated_at)}
-                        </p>
+                    <div className="flex justify-between text-sm">
+                      <a
+                        href={repo.html_url}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        title={`View on GitHub`}
+                      >
+                        <i className="bi bi-github mr-2" />
+                        <span className={`group hover:underline`}>
+                          {repo.full_name}
+                          <i
+                            className={`bi bi-box-arrow-up-right pl-1  hidden group-hover:inline`}
+                          ></i>
+                        </span>
+                      </a>
+                      <p
+                        className="text-gray-400"
+                        title={`Last updated at: ${formatDate(
+                          repo.updated_at
+                        )}`}
+                      >
+                        {formatDate(repo.updated_at)}
+                      </p>
+                    </div>
+                    <div className="text-left">
+                      <div className="flex justify-between">
+                        <h2 className="text-3xl font-bold mt-4">
+                          <a href={`#${repo.name}`}>{repo.name}</a>
+                        </h2>
                       </div>
-                      <div className="text-left">
-                        <div className="flex justify-between">
-                          <h2 className="text-3xl font-bold mt-4">
-                            <a href={`#${repo.name}`}>{repo.name}</a>
-                          </h2>
-                        </div>
-                        <p className="text-base my-4">{repo.description}</p>
+                      <p className="text-base my-4">{repo.description}</p>
 
-                        <div className="flex pt-4 justify-between">
-                          <p className="w-full">
-                            {Object.keys(repo.languages).map((language) => (
-                              <span
-                                key={language}
-                                className="inline-block bg-gray-200 rounded-full px-2 py-1 text-sm font-light text-gray-800 mr-2 mb-2"
-                              >
-                                {language.toLowerCase()}
-                              </span>
-                            ))}
-                          </p>
-                          <a
-                            className="text-blue-500 hover:underline font-thin min-w-max py-1 mt-auto"
-                            href={`projects/${repo.name}`}
-                          >
-                            Learn more
-                          </a>
-                        </div>
+                      <div className="flex pt-4 justify-between">
+                        <p className="w-full">
+                          {Object.keys(repo.languages).map((language) => (
+                            <span
+                              key={language}
+                              className="inline-block bg-gray-200 rounded-full px-2 py-1 text-sm font-light text-gray-800 mr-2 mb-2"
+                            >
+                              {language.toLowerCase()}
+                            </span>
+                          ))}
+                        </p>
+                        <a
+                          className="text-blue-500 hover:underline font-thin min-w-max py-1 mt-auto"
+                          href={`projects/${repo.name}`}
+                        >
+                          Learn more
+                        </a>
                       </div>
                     </div>
                   </div>
-                )
-            )}
-          </div>
-        </section>
-        <ProjectFooter />
-      </main>
-    </>
+                </div>
+              )
+          )}
+        </div>
+      </section>
+      <ProjectFooter />
+    </main>
   );
 }
 
@@ -206,16 +204,16 @@ const ProjectFooter = () => {
           }
         </p>
         <div className="flex flex-col space-y-4 sm:space-y-0 sm:flex-row sm:space-x-8">
-          <div className="flex flex-row justify-center items-center pt-10">
+          <div className="flex flex-col sm:flex-row justify-center items-center pt-10">
             <input
-              className="w-3/5 p-3 h-min rounded-l-lg sm:w-2/3 dark:text-gray-800 focus:outline-none bg-slate-100"
-              type="text"
+              className="text-center w-full sm:w-3/5 p-3 h-min rounded-lg sm:rounded-r-none dark:text-gray-800 focus:outline-none bg-slate-100"
+              type="email"
               value="contact@bibeka.com.np"
               readOnly
             />
             <a
               href="mailto:conatact@bibeka.com.np?subject=Let's collaborate!"
-              className="w-2/5 p-3  min-w-max cursor-pointer h-min rounded-r-lg sm:w-1/3 bg-violet-500  text-white dark:text-gray-800"
+              className="w-2/5 p-3 mt-4 sm:mt-0 min-w-max cursor-pointer h-min rounded-lg sm:rounded-l-none  sm:w-1/3 bg-violet-500  text-white dark:text-gray-800"
             >
               Send Email
             </a>
