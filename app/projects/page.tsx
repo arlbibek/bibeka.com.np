@@ -159,7 +159,7 @@ const ProjectHeader = () => {
         </h1>
         <p className="mt-6 my-8 text-lg sm:mb-12 text-grey-200">
           I am proud to have worked on a number of projects that have had a
-          positive impact on individuals and organizations.
+          positive impact on individuals and organizations
           <br className="hidden md:inline lg:hidden" />
         </p>
       </div>
