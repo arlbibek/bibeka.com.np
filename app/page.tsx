@@ -5,7 +5,7 @@ import plants from "../public/images/plants.png";
 
 export default function Home() {
   return (
-    <main className="bg-[#1c1b22] min-h-screen grid place-items-center text-center font-serif">
+    <main className="bg-slate-900 min-h-screen grid place-items-center text-center font-serif">
       <div className="transition-all duration-300">
         <Header />
         <Status />
@@ -24,7 +24,6 @@ const Header = () => {
         alt="picture of a plant"
         width={100}
         height={100}
-        placeholder="blur" // blur-up while loading
       />
       <h1 className="bg-gradient-to-r from-white to-my-yellow text-transparent bg-clip-text min-w-max text-5xl sm:text-6xl md:text-7xl lg:text-8xl">
         <span className="block py-4 text-2xl md:inline sm:text-3xl md:text-7xl lg:text-8xl">
