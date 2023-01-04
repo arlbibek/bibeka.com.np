@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${merriweather.variable}`}>
       <head />
-      <body>{children}</body>
+      <body className="font-serif dark:bg-slate-900">{children}</body>
     </html>
   );
 }

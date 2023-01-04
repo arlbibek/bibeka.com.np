@@ -1,5 +1,4 @@
 import Image from "next/image";
-
 import getProjects from "./ProjectList";
 import doodle from "../../public/images/doodle.svg";
 import projects_cover from "../../public/images/projects-cover.svg";
@@ -57,7 +56,7 @@ export default async function ProjectsPage() {
     })
   );
   return (
-    <main className="text-gray-800 dark:text-gray-100 text-center lg:text-left p-5 dark:bg-slate-900 font-serif">
+    <main className="text-gray-800 dark:text-gray-200 text-center lg:text-left p-5 dark:bg-slate-900 font-serif">
       <ProjectHeader />
       <section>
         <div className="container mx-auto p-10 md:py-20 px-0 md:p-10 md:px-0  max-w-5xl ">
@@ -157,7 +156,7 @@ const ProjectHeader = () => {
           {"Projects I am "}
           <span className="text-violet-400">proud</span> of
         </h1>
-        <p className="mt-6 my-8 text-lg sm:mb-12 text-grey-200">
+        <p className="mt-6 my-8 text-lg sm:mb-12 dark:text-gray-100">
           I am proud to have worked on a number of projects that have had a
           positive impact on individuals and organizations
           <br className="hidden md:inline lg:hidden" />
@@ -180,6 +179,7 @@ const ProjectFooter = () => {
       <div className="inline-flex justify-center items-center w-full">
         <hr className="my-8 w-64 h-1 bg-gray-200 rounded border-0 dark:bg-gray-700" />
         <div className="absolute left-1/2 px-4 bg-white -translate-x-1/2 dark:bg-slate-900">
+          {/* open quote svg */}
           <svg
             aria-hidden="true"
             className="w-5 h-5 text-gray-700 dark:text-gray-300"
