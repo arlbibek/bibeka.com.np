@@ -37,7 +37,7 @@ export default function Home() {
         <div className="relative px-6 lg:px-8">
           <div className="mx-auto max-w-3xl pt-20 pb-32 sm:pt-48 sm:pb-40">
             <div>
-              <div className="hidden sm:mb-8 sm:flex sm:justify-center">
+              <div className="sm:mb-8 sm:flex sm:justify-center">
                 <div className="relative overflow-hidden rounded-full py-1.5 px-4 text-sm leading-6 ring-1 ring-gray-900/10 dark:ring-gray-300/10 hover:ring-gray-900/20">
                   <span className="text-gray-600 dark:text-gray-400">
                     Projects I am proud of{" "}
