@@ -103,9 +103,7 @@ export default async function ProjectsPage() {
                       </a>
                       <p
                         className="text-gray-400"
-                        title={`Last updated at: ${formatDate(
-                          repo.updated_at
-                        )}`}
+                        title={`Last updated at: ${formatDate(repo.pushed_at)}`}
                       >
                         {formatDate(repo.updated_at)}
                       </p>
