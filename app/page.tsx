@@ -61,9 +61,7 @@ export default function Home() {
                 </h1>
                 <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300 sm:text-center">
                   Skilled IT professional with experience in networking,
-                  security, and programming. Seeking an entry-level position to
-                  utilize my technical skills and continue learning in the
-                  field.
+                  security, and programming.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4 sm:justify-center">
                   <a
