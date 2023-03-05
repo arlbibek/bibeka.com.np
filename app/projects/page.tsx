@@ -103,9 +103,9 @@ export default async function ProjectsPage() {
                       </a>
                       <p
                         className="text-gray-400"
-                        title={`Last updated at: ${formatDate(repo.pushed_at)}`}
+                        title={`Last pushed at: ${repo.pushed_at}`}
                       >
-                        {formatDate(repo.updated_at)}
+                        {formatDate(repo.pushed_at)}
                       </p>
                     </div>
                     <div className="text-left">
@@ -231,9 +231,26 @@ const ProjectFooter = () => {
 };
 
 function formatDate(dateString: string) {
-  const date = new Date(dateString);
-  const readableDate = date.toLocaleDateString("en-US");
-  return readableDate;
+  const timestamp = Date.parse(dateString);
+  const now = Date.now();
+  const dt = now - timestamp;
+
+  if (dt < 60 * 1000) {
+    return "just now";
+  } else if (dt < 60 * 60 * 1000) {
+    return `${Math.floor(dt / (60 * 1000))} minutes ago`;
+  } else if (dt < 24 * 60 * 60 * 1000) {
+    return `${Math.floor(dt / (60 * 60 * 1000))} hours ago`;
+  } else if (dt < 7 * 24 * 60 * 60 * 1000) {
+    return `${Math.floor(dt / (24 * 60 * 60 * 1000))} days ago`;
+  } else {
+    const date = new Date(dateString);
+    return date.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    });
+  }
 }
 
 export async function generateStaticParams() {
