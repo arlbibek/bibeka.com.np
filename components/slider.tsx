@@ -7,6 +7,8 @@ import { XMarkIcon } from "@heroicons/react/24/outline";
 
 export default function Slider() {
   const [open, setOpen] = useState(false);
+  const docURL =
+    "https://docs.google.com/document/d/e/2PACX-1vQ8jxqzqDE3TASPvv9BLWcCXoL8P6JXGwyLkmahguJGRJw2DrQxcDMu-OVJxdcLdGJswUNpP0Tefvt8/pub";
   return (
     <>
       <button
@@ -69,8 +71,26 @@ export default function Slider() {
 
                     <div className="flex h-full flex-col overflow-y-scroll py-4  bg-white  dark:text-gray-200 dark:bg-slate-900 shadow-xl">
                       <div className="relative mt-6 flex-1 px-4 sm:px-6">
+                        <a
+                          href={"https://is.gd/arlresume"}
+                          target="_blank"
+                          rel="noreferrer noopener"
+                        >
+                          <i className="ml-2 bi bi-file-earmark-text" />
+                        </a>
+                        <a
+                          href={docURL}
+                          target="_blank"
+                          rel="noreferrer noopener"
+                          title={`Open resume in new tab`}
+                        >
+                          <span className={`ml-2  hover:underline`}>
+                            {"Bibek Aryal - Resume 2023"}
+                            <i className={`bi bi-box-arrow-up-right pl-1`}></i>
+                          </span>
+                        </a>
                         <iframe
-                          src="https://docs.google.com/document/d/e/2PACX-1vQ8jxqzqDE3TASPvv9BLWcCXoL8P6JXGwyLkmahguJGRJw2DrQxcDMu-OVJxdcLdGJswUNpP0Tefvt8/pub?embedded=true"
+                          src={`${docURL}?embedded=true`}
                           className="min-w-max sm:w-[595px] h-full"
                         ></iframe>
                       </div>
