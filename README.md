@@ -6,15 +6,18 @@ Visit webpage [bibeka.com.np](https://bibeka.com.np/).
 
 ## built with
 
-|              |                                             |
-| ------------ | ------------------------------------------- |
-| Next.js `13` | [nextjs.org](https://nextjs.org/)           |
-| Tailwind CSS | [tailwindcss.com](https://tailwindcss.com/) |
+|                  |                                                           |
+| ---------------- | --------------------------------------------------------- |
+| Next.js `13`     | [nextjs.org](https://nextjs.org/)                         |
+| Tailwind CSS     | [tailwindcss.com](https://tailwindcss.com/)               |
+| Bootstraps Icons | [icons.getbootstrap.com](https://icons.getbootstrap.com/) |
 
 ---
 
 <details>
-  <summary><i>Click to expand for development setup!</i></summary>
+  <summary>
+  <i>Click to expand for development setup!</i>
+  </summary>
 
 ## Setting up the development environment
 
