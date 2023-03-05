@@ -38,3 +38,4 @@ next-env.d.ts
 # bibeka.com.np
 .env
 .vscode/
+*test*
