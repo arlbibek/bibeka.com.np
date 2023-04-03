@@ -2,6 +2,7 @@ import Image from "next/image";
 import getProjects from "./ProjectList";
 import doodle from "../../public/images/doodle.svg";
 import projects_cover from "../../public/images/projects-cover.svg";
+import Link from "next/link";
 
 async function fetchRepoData(repoOwner: string, repoName: string) {
   const options = {
@@ -35,7 +36,7 @@ async function fetchRepoData(repoOwner: string, repoName: string) {
       languagesResponse.status === 403
     ) {
       // Rate limit reached, handle the error appropriately
-      console.error(
+      throw new Error(
         "Rate limit reached. You may need to authenticate your request with a personal access token."
       );
     } else {
@@ -43,8 +44,8 @@ async function fetchRepoData(repoOwner: string, repoName: string) {
         `Request failed: ${repoResponse.statusText}, ${languagesResponse.statusText}`
       );
     }
-  } catch (error) {
-    console.error(error);
+  } catch (error: any) {
+    throw new Error(`Failed to fetch repo data: ${error.message}`);
   }
 }
 
@@ -58,6 +59,7 @@ export default async function ProjectsPage() {
   return (
     <main className="text-gray-800 dark:text-gray-200 text-center lg:text-left p-5 dark:bg-slate-900 font-serif">
       <ProjectHeader />
+
       <section>
         <div className="container mx-auto p-10 md:py-20 px-0 md:p-10 md:px-0  max-w-5xl ">
           {repos.map(
@@ -91,13 +93,17 @@ export default async function ProjectsPage() {
                         href={repo.html_url}
                         target="_blank"
                         rel="noreferrer noopener"
-                        title={`View on GitHub`}
+                        title={`View on GitHub${
+                          repo.stargazers_count > 0
+                            ? ": " + repo.stargazers_count + " stars"
+                            : ""
+                        }`}
                       >
                         <i className="bi bi-github mr-2" />
                         <span className={`group hover:underline`}>
                           {repo.full_name}
                           <i
-                            className={`bi bi-box-arrow-up-right pl-1  hidden group-hover:inline`}
+                            className={`bi bi-box-arrow-up-right pl-1  hidden group-hover:inline text-violet-500`}
                           ></i>
                         </span>
                       </a>
@@ -117,7 +123,13 @@ export default async function ProjectsPage() {
                       <p className="text-base my-4">{repo.description}</p>
 
                       <div className="flex pt-4 justify-between">
-                        <p className="w-full">
+                        <p className="w-full font-mono">
+                          {repo.stargazers_count > 0 && (
+                            <span className="inline-block 200 rounded-full px-2 py-1 font-bold text-sm mr-2 mb-2 hover:">
+                              <i className="bi bi-star pr-1 " />
+                              {repo.stargazers_count}
+                            </span>
+                          )}
                           {Object.keys(repo.languages).map((language) => (
                             <span
                               key={language}
@@ -127,12 +139,12 @@ export default async function ProjectsPage() {
                             </span>
                           ))}
                         </p>
-                        <a
-                          className="text-blue-500 hover:underline font-thin min-w-max py-1 mt-auto"
+                        {/* <a
+                          className="text-violet-600 hover:underline font-thin min-w-max py-1 mt-auto"
                           href={`projects/${repo.name}`}
                         >
                           Learn more
-                        </a>
+                        </a> */}
                       </div>
                     </div>
                   </div>

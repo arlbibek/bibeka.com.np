@@ -14,6 +14,7 @@ module.exports = {
     },
     fontFamily: {
       serif: ["var(--font-merriweather)"],
+      mono: ["Consolas", "Courier New", "monospace"],
     },
   },
   plugins: [],
