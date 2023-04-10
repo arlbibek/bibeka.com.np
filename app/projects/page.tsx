@@ -59,7 +59,6 @@ export default async function ProjectsPage() {
   return (
     <main className="text-gray-800 dark:text-gray-200 text-center lg:text-left p-5 dark:bg-slate-900 font-serif">
       <ProjectHeader />
-
       <section>
         <div className="container mx-auto p-10 md:py-20 px-0 md:p-10 md:px-0  max-w-5xl ">
           {repos.map(
@@ -88,29 +87,25 @@ export default async function ProjectsPage() {
                       "lg:max-w-lg  lg:absolute top-[60%] left-[30rem] lg:hover:-translate-y-4 rounded-b-xl lg:rounded-xl "
                     }`}
                   >
-                    <div className="flex justify-between text-sm">
+                    <div className="flex justify-between text-sm text-gray-400">
                       <a
                         href={repo.html_url}
                         target="_blank"
                         rel="noreferrer noopener"
                         title={`View on GitHub${
-                          repo.stargazers_count > 0
-                            ? ": " + repo.stargazers_count + " stars"
-                            : ""
+                          repo.stargazers_count > 0 &&
+                          ": " + repo.stargazers_count + " stars"
                         }`}
                       >
                         <i className="bi bi-github mr-2" />
-                        <span className={`group hover:underline`}>
+                        <span className={`group hover:underline `}>
                           {repo.full_name}
                           <i
-                            className={`bi bi-box-arrow-up-right pl-1  hidden group-hover:inline text-violet-500`}
+                            className={`bi bi-box-arrow-up-right pl-1  hidden group-hover:inline text-pink-400`}
                           ></i>
                         </span>
                       </a>
-                      <p
-                        className="text-gray-400"
-                        title={`Last pushed at: ${repo.pushed_at}`}
-                      >
+                      <p title={`pushed at: ${repo.pushed_at}`}>
                         {formatDate(repo.pushed_at)}
                       </p>
                     </div>
@@ -125,7 +120,14 @@ export default async function ProjectsPage() {
                       <div className="flex pt-4 justify-between">
                         <p className="w-full font-mono">
                           {repo.stargazers_count > 0 && (
-                            <span className="inline-block 200 rounded-full px-2 py-1 font-bold text-sm mr-2 mb-2 hover:">
+                            <span
+                              className="inline-block 200 rounded-full px-1 py-1 font-bold text-sm"
+                              title={
+                                "⭐" +
+                                repo.stargazers_count +
+                                " stars on GitHub"
+                              }
+                            >
                               <i className="bi bi-star pr-1 " />
                               {repo.stargazers_count}
                             </span>
@@ -133,18 +135,12 @@ export default async function ProjectsPage() {
                           {Object.keys(repo.languages).map((language) => (
                             <span
                               key={language}
-                              className="inline-block bg-gray-200 rounded-full px-2 py-1 text-sm font-light text-gray-800 mr-2 mb-2"
+                              className="inline-block rounded-full px-1 py-1 text-sm font-light text-gray-400 "
                             >
-                              {language.toLowerCase()}
+                              #{language.toLowerCase()}
                             </span>
                           ))}
                         </p>
-                        {/* <a
-                          className="text-violet-600 hover:underline font-thin min-w-max py-1 mt-auto"
-                          href={`projects/${repo.name}`}
-                        >
-                          Learn more
-                        </a> */}
                       </div>
                     </div>
                   </div>
@@ -250,11 +246,14 @@ function formatDate(dateString: string) {
   if (dt < 60 * 1000) {
     return "just now";
   } else if (dt < 60 * 60 * 1000) {
-    return `${Math.floor(dt / (60 * 1000))} minutes ago`;
+    const minutes = Math.floor(dt / (60 * 1000));
+    return `${minutes} ${minutes === 1 ? "minute" : "minutes"} ago`;
   } else if (dt < 24 * 60 * 60 * 1000) {
-    return `${Math.floor(dt / (60 * 60 * 1000))} hours ago`;
+    const hours = Math.floor(dt / (60 * 60 * 1000));
+    return `${hours} ${hours === 1 ? "hour" : "hours"} ago`;
   } else if (dt < 7 * 24 * 60 * 60 * 1000) {
-    return `${Math.floor(dt / (24 * 60 * 60 * 1000))} days ago`;
+    const days = Math.floor(dt / (24 * 60 * 60 * 1000));
+    return `${days} ${days === 1 ? "day" : "days"} ago`;
   } else {
     const date = new Date(dateString);
     return date.toLocaleDateString("en-US", {
