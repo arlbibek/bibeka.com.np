@@ -5,6 +5,7 @@ import { Merriweather } from "@next/font/google";
 const merriweather = Merriweather({
   weight: "400",
   variable: "--font-merriweather",
+  subsets: ["latin"],
 });
 
 export default function RootLayout({

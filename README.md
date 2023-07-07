@@ -47,7 +47,14 @@ Visit webpage [bibeka.com.np](https://bibeka.com.np/).
    npm run dev
    ```
 
-   and done!
+> Make sure that you have appropriate environment variables, eg.
+
+```.env
+# .env.local
+GITHUB_TOKEN=<github_pat_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX>
+```
+
+and done!
 
 ---
 

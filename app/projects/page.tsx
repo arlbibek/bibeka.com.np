@@ -105,7 +105,10 @@ export default async function ProjectsPage() {
                           ></i>
                         </span>
                       </a>
-                      <p title={`pushed at: ${repo.pushed_at}`}>
+                      <p
+                        title={`pushed at: ${repo.pushed_at}`}
+                        className="hover:underline"
+                      >
                         {formatDate(repo.pushed_at)}
                       </p>
                     </div>
@@ -135,7 +138,7 @@ export default async function ProjectsPage() {
                           {Object.keys(repo.languages).map((language) => (
                             <span
                               key={language}
-                              className="inline-block rounded-full px-1 py-1 text-sm font-light text-gray-400 "
+                              className="inline-block rounded-full px-1 py-1 text-sm font-light text-gray-400"
                             >
                               #{language.toLowerCase()}
                             </span>
