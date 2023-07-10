@@ -245,6 +245,7 @@ function formatDate(dateString: string) {
   const timestamp = Date.parse(dateString);
   const now = Date.now();
   const dt = now - timestamp;
+  const currentYear = new Date().getFullYear();
 
   if (dt < 60 * 1000) {
     return "just now";
@@ -259,11 +260,19 @@ function formatDate(dateString: string) {
     return `${days} ${days === 1 ? "day" : "days"} ago`;
   } else {
     const date = new Date(dateString);
-    return date.toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "short",
-      day: "numeric",
-    });
+    const year = date.getFullYear();
+    const month = date.toLocaleString("en-US", { month: "short" });
+    const day = date.getDate();
+
+    if (year === currentYear) {
+      return `${month}, ${day}`;
+    } else {
+      return date.toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+      });
+    }
   }
 }
 
