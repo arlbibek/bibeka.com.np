@@ -11,12 +11,9 @@ export default function BS() {
             nepalicalendar.rat32.com
           </a>
         </p>
-        <div className="">
+        <div className="flex">
           <iframe
             src="https://nepalicalendar.rat32.com/embed.php"
-            frameborder="0"
-            marginwidth="0"
-            marginheight="0"
             style={{
               border: "none",
               overflow: "hidden",
@@ -26,7 +23,6 @@ export default function BS() {
               padding: "0px",
               margin: "auto",
             }}
-            allowtransparency="true"
           ></iframe>
         </div>
       </div>
