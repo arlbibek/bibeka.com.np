@@ -1,10 +1,9 @@
 export default function BS() {
   return (
-    <div className="text-white flex justify-center p-5">
+    <div className="text-white flex justify-center p-3">
       <div>
-        <h1 className="text-5xl">Bikram Samvat Calendar</h1>
-        <p className="my-3">
-          For the time being refere to{" "}
+        <p className="my-1">
+          {"Bikram Samvat Calendar: "}
           <a
             className="underline text-blue-500"
             href="https://nepalicalendar.rat32.com"
