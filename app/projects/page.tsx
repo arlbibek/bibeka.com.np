@@ -2,7 +2,6 @@ import Image from "next/image";
 import getProjects from "./ProjectList";
 import doodle from "../../public/images/doodle.svg";
 import projects_cover from "../../public/images/projects-cover.svg";
-import Link from "next/link";
 
 async function fetchRepoData(repoOwner: string, repoName: string) {
   const options = {
@@ -167,7 +166,7 @@ const ProjectHeader = () => {
         </h1>
         <p className="mt-6 my-8 text-lg sm:mb-12 dark:text-gray-100">
           I am proud to have worked on a number of projects that have had a
-          positive impact on individuals and organizations
+          positive impact on individuals and organizations{" "}
           <br className="hidden md:inline lg:hidden" />
         </p>
       </div>

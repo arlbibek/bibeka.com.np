@@ -1,12 +1,6 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
   reactStrictMode: true,
-  experimental: {
-    appDir: true,
-    fontLoaders: [
-      { loader: "@next/font/google", options: { subsets: ["latin"] } },
-    ],
-  },
   images: {
     remotePatterns: [
       {
@@ -39,6 +33,11 @@ module.exports = {
       {
         source: "/easyupload",
         destination: "https://mega.nz/megadrop/fzUsZP-DxgM",
+        permanent: true,
+      },
+      {
+        source: "/bs",
+        destination: "https://nepalicalendar.rat32.com",
         permanent: true,
       },
     ];

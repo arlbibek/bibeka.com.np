@@ -1,6 +1,8 @@
 import "../styles/globals.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import { Merriweather } from "@next/font/google";
+import { Merriweather } from "next/font/google";
+
+import Header from "../components/Header";
 
 const merriweather = Merriweather({
   weight: "400",
@@ -15,8 +17,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${merriweather.variable}`}>
-      <head />
-      <body className="font-serif dark:bg-slate-900">{children}</body>
+      <Header />
+      <body className="font-serif dark:bg-slate-900 dark:text-white">
+        {children}
+      </body>
     </html>
   );
 }
