@@ -40,6 +40,22 @@ module.exports = {
         destination: "https://nepalicalendar.rat32.com",
         permanent: true,
       },
+      {
+        source: "/resume",
+        destination: "https://rxresu.me/r/2E2uBOyZ",
+        permanent: true,
+      },
+      {
+        source: "/cv",
+        destination: "https://rxresu.me/r/2E2uBOyZ",
+        permanent: true,
+      },
+      {
+        source: "/arlresume",
+        destination:
+          "https://drive.google.com/drive/folders/1xc-jyi9qWAuSwfDL8rgxDn4YrwcMi9il",
+        permanent: true,
+      },
     ];
   },
 };

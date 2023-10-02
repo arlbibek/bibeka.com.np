@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Slider from "../components/slider";
 
 export default function Home() {
   return (
@@ -70,7 +69,21 @@ export default function Home() {
                   >
                     contact@bibeka.com.np
                   </a>
-                  <Slider />
+                  <Link
+                    href="/resume"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    title="Open resume in new tab"
+                    className="w-max inline-block rounded-lg px-4 py-1.5 text-base font-semibold leading-7 text-gray-900 dark:text-gray-300 ring-1 ring-gray-900/10 dark:ring-gray-300/10 hover:ring-gray-900/20 group"
+                  >
+                    Resume
+                    <span
+                      className="text-indigo-200 ml-2 group-hover:text-pink-400"
+                      aria-hidden="true"
+                    >
+                      &rarr;
+                    </span>
+                  </Link>
                 </div>
               </div>
               <div className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"></div>
