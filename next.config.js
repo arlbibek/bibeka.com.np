@@ -47,7 +47,7 @@ module.exports = {
       },
       {
         source: "/cv",
-        destination: "https://rxresu.me/r/2E2uBOyZ",
+        destination: "https://rxresu.me/aryalbmail/resume",
         permanent: true,
       },
       {
