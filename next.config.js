@@ -42,12 +42,12 @@ module.exports = {
       },
       {
         source: "/resume",
-        destination: "https://rxresu.me/r/2E2uBOyZ",
+        destination: "https://rxresu.me/bibeka/resume",
         permanent: true,
       },
       {
         source: "/cv",
-        destination: "https://rxresu.me/aryalbmail/resume",
+        destination: "https://rxresu.me/bibeka/resume",
         permanent: true,
       },
       {
