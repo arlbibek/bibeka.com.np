@@ -14,12 +14,6 @@ module.exports = {
   async redirects() {
     return [
       {
-        source: "/install",
-        destination:
-          "https://raw.githubusercontent.com/arlbibek/scripts/master/install-from-dir.ps1",
-        permanent: true,
-      },
-      {
         source: "/github",
         destination: "https://github.com/arlbibek",
         permanent: true,
@@ -38,16 +32,6 @@ module.exports = {
       {
         source: "/bs",
         destination: "https://nepalicalendar.rat32.com",
-        permanent: true,
-      },
-      {
-        source: "/resume",
-        destination: "https://rxresu.me/bibeka/resume",
-        permanent: true,
-      },
-      {
-        source: "/cv",
-        destination: "https://rxresu.me/bibeka/resume",
         permanent: true,
       },
       {
