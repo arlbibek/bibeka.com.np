@@ -54,7 +54,7 @@ Visit webpage [bibeka.com.np](https://bibeka.com.np/).
 GITHUB_TOKEN=github_pat_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 
-and done!
+& done!
 
 ---
 
