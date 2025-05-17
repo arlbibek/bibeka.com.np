@@ -59,15 +59,34 @@ export default function Home() {
                   {"Bibek Aryal!"}
                 </h1>
                 <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300 sm:text-center">
-                  Skilled IT professional with experience in networking,
-                  security, and programming.
+                  A cybersecurity and GRC-focused IT professional with a strong
+                  foundation in networking and information security. Making
+                  world a better place with technology.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4 sm:justify-center">
                   <a
-                    href="mailto:contact@bibeka.com.np?subject=Let's collaborate!"
+                    href="mailto:bibek@bibeka.com.np?subject=Let's collaborate!"
                     className="w-max inline-block rounded-lg bg-indigo-600 px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-indigo-600 hover:bg-indigo-700 hover:ring-indigo-700"
                   >
                     bibek@bibeka.com.np
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/bibeknaryal/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-lg border border-[#0077B5] px-4 py-1.5 text-base font-semibold text-[#0077B5] transition hover:bg-[#0077B5] hover:text-white"
+                  >
+                    {/* LinkedIn Logo (SVG) */}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                      className="w-5 h-5"
+                    >
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.327-.028-3.036-1.849-3.036-1.851 0-2.134 1.445-2.134 2.939v5.666H9.356V9h3.414v1.561h.049c.476-.898 1.637-1.848 3.367-1.848 3.6 0 4.265 2.368 4.265 5.451v6.288zM5.337 7.433c-1.144 0-2.07-.927-2.07-2.07 0-1.143.926-2.07 2.07-2.07 1.144 0 2.07.927 2.07 2.07 0 1.143-.926 2.07-2.07 2.07zM6.814 20.452H3.861V9h2.953v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z" />
+                    </svg>
+
+                    <span>bibeknaryal</span>
                   </a>
                 </div>
               </div>

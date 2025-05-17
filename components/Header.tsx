@@ -14,7 +14,7 @@ export default function Header() {
       <meta
         name="description"
         content={
-          "Portfolio website of Bibek Aryal. A Computer Networking & IT Security graduate from Nepal. Making the world a better place with technology. "
+          "Portfolio website of Bibek Aryal - a Computer Networking & Cyber Security professional from Kathmandu, Nepal. Making the world a better place with technology. "
         }
       />
       <meta

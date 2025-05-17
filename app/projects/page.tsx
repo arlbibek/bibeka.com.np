@@ -216,14 +216,14 @@ const ProjectFooter = () => {
             <input
               className="text-center w-full sm:w-3/5 p-3 h-min rounded-lg sm:rounded-r-none dark:text-gray-800 focus:outline-none bg-slate-100"
               type="email"
-              value="contact@bibeka.com.np"
+              value="bibek@bibeka.com.np"
               readOnly
             />
             <a
-              href="mailto:conatact@bibeka.com.np?subject=Let's collaborate!"
+              href="mailto:bibek@bibeka.com.np?subject=Let's collaborate!"
               className="w-2/5 p-3 mt-4 sm:mt-0 min-w-max cursor-pointer h-min rounded-lg sm:rounded-l-none  sm:w-1/3 bg-violet-500  text-white dark:text-gray-800"
             >
-              Send Email
+              Send email
             </a>
           </div>
         </div>

@@ -19,6 +19,22 @@ module.exports = {
         permanent: true,
       },
       {
+        source: "/arlresume",
+        destination:
+          "https://drive.google.com/drive/folders/1xc-jyi9qWAuSwfDL8rgxDn4YrwcMi9il",
+        permanent: true,
+      },
+      {
+        source: "/resume",
+        destination: "https://rxresu.me/bibeka/resume",
+        permanent: true,
+      },
+      {
+        source: "/cv",
+        destination: "https://rxresu.me/bibeka/resume",
+        permanent: true,
+      },
+      {
         source: "/easyaccess",
         destination:
           "https://drive.google.com/drive/folders/1F_OYMSpHlls1ej4KZSX6g2BDkKGt446T",
@@ -30,14 +46,15 @@ module.exports = {
         permanent: true,
       },
       {
-        source: "/bs",
-        destination: "https://nepalicalendar.rat32.com",
+        source: "/arlext",
+        destination:
+          "https://alternativeto.net/lists/41213/browser-extensions-i-cannot-live-without/",
         permanent: true,
       },
       {
-        source: "/arlresume",
+        source: "/arlapps",
         destination:
-          "https://drive.google.com/drive/folders/1xc-jyi9qWAuSwfDL8rgxDn4YrwcMi9il",
+          "https://alternativeto.net/lists/41212/softwares-and-tools-that-i-cannot-live-without/",
         permanent: true,
       },
     ];
