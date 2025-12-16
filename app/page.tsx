@@ -64,19 +64,22 @@ export default function Home() {
                   world a better place with technology.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4 sm:justify-center">
+                  {/* Email */}
                   <a
-                    href="mailto:bibek@bibeka.com.np?subject=Let's collaborate!"
-                    className="w-max inline-block rounded-lg bg-indigo-600 px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-indigo-600 hover:bg-indigo-700 hover:ring-indigo-700"
+                    href="mailto:bibek@duck.com?subject=Let%27s%20collaborate%21"
+                    className="flex items-center gap-2 w-max rounded-lg bg-indigo-600 px-4 py-2 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-indigo-600 hover:bg-indigo-700 hover:ring-indigo-700"
                   >
-                    bibek@bibeka.com.np
+                    <span>bibek@duck.com</span>
                   </a>
+
+                  {/* LinkedIn */}
                   <a
                     href="https://www.linkedin.com/in/bibeknaryal/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-lg border border-[#0077B5] px-4 py-1.5 text-base font-semibold text-[#0077B5] transition hover:bg-[#0077B5] hover:text-white"
+                    className="w-max inline-flex items-center gap-2 rounded-lg border border-indigo-500 px-4 py-1.5 text-base font-semibold text-indigo-500 transition hover:bg-indigo-500 hover:text-white"
                   >
-                    {/* LinkedIn Logo (SVG) */}
+                    {/* LinkedIn Logo */}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="currentColor"
@@ -85,8 +88,26 @@ export default function Home() {
                     >
                       <path d="M20.447 20.452h-3.554v-5.569c0-1.327-.028-3.036-1.849-3.036-1.851 0-2.134 1.445-2.134 2.939v5.666H9.356V9h3.414v1.561h.049c.476-.898 1.637-1.848 3.367-1.848 3.6 0 4.265 2.368 4.265 5.451v6.288zM5.337 7.433c-1.144 0-2.07-.927-2.07-2.07 0-1.143.926-2.07 2.07-2.07 1.144 0 2.07.927 2.07 2.07 0 1.143-.926 2.07-2.07 2.07zM6.814 20.452H3.861V9h2.953v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z" />
                     </svg>
+                    <span>/ bibeknaryal</span>
+                  </a>
 
-                    <span>bibeknaryal</span>
+                  {/* GitHub */}
+                  <a
+                    href="https://github.com/arlbibek/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-max inline-flex items-center gap-2 rounded-lg border border-indigo-500 px-4 py-1.5 text-base font-semibold text-indigo-500 transition hover:bg-indigo-500 hover:text-white"
+                  >
+                    {/* GitHub Logo */}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                      className="w-5 h-5"
+                    >
+                      <path d="M12 0C5.371 0 0 5.372 0 12c0 5.303 3.438 9.8 8.205 11.387.6.111.82-.261.82-.577 0-.285-.011-1.04-.016-2.04-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.73.083-.73 1.205.085 1.84 1.238 1.84 1.238 1.07 1.835 2.807 1.305 3.492.997.108-.775.418-1.305.762-1.605-2.665-.304-5.466-1.333-5.466-5.932 0-1.31.469-2.381 1.236-3.221-.124-.303-.536-1.524.117-3.176 0 0 1.008-.322 3.301 1.23a11.52 11.52 0 0 1 3.003-.404 11.53 11.53 0 0 1 3.003.404c2.291-1.552 3.297-1.23 3.297-1.23.654 1.652.242 2.873.118 3.176.77.84 1.236 1.911 1.236 3.221 0 4.61-2.803 5.625-5.475 5.921.43.37.813 1.102.813 2.222 0 1.606-.015 2.903-.015 3.293 0 .319.216.694.825.576C20.565 21.796 24 17.3 24 12c0-6.628-5.372-12-12-12z" />
+                    </svg>
+                    <span>/ arlbibek</span>
                   </a>
                 </div>
               </div>

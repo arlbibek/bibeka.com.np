@@ -14,6 +14,12 @@ module.exports = {
   async redirects() {
     return [
       {
+        source: "/install",
+        destination:
+          "https://raw.githubusercontent.com/arlbibek/dotfiles/refs/heads/master/scripts/install.sh",
+        permanent: true,
+      },
+      {
         source: "/github",
         destination: "https://github.com/arlbibek",
         permanent: true,
