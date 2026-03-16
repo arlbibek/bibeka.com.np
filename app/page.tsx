@@ -1,6 +1,18 @@
-"use client";
-
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Bibek Aryal | Information Security & GRC Professional",
+  description:
+    "Information Security and GRC professional with 4+ years of experience in ISO/IEC 27001 implementation, cyber risk management, and security operations.",
+  openGraph: {
+    title: "Bibek Aryal | Information Security & GRC Professional",
+    description:
+      "Information Security and GRC professional with 4+ years of experience in ISO/IEC 27001 implementation, cyber risk management, and security operations.",
+    url: "https://bibeka.com.np",
+    type: "website",
+  },
+};
 
 export default function Home() {
   return (
@@ -59,10 +71,10 @@ export default function Home() {
                   {"Bibek Aryal!"}
                 </h1>
                 <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300 sm:text-center">
-                  A cybersecurity and GRC focused professional with a strong
-                  foundation in networking and information security with{" "}
-                  <span className="text-violet-400">3+ years</span> in making
-                  the world a better place.
+                  Information Security and GRC professional with{" "}
+                  <span className="text-violet-400">4+ years</span> of
+                  experience in ISO/IEC 27001 implementation, cyber risk
+                  management, and security operations.
                 </p>
                 <div className="mt-6 flex flex-col sm:flex-row gap-3 sm:justify-center">
                   {/* Email */}
@@ -75,7 +87,7 @@ export default function Home() {
 
                   {/* LinkedIn */}
                   <a
-                    href="https://www.linkedin.com/in/bibeknaryal/"
+                    href="https://www.linkedin.com/in/bibeknaryal"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-max inline-flex items-center gap-1.5 rounded-lg border border-indigo-500 px-3 py-1.5 text-sm font-semibold text-indigo-500 transition hover:bg-indigo-500 hover:text-white"
@@ -115,6 +127,23 @@ export default function Home() {
           </div>
         </div>
       </main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: "Bibek Aryal",
+            url: "https://bibeka.com.np",
+            jobTitle: "Information Security Officer",
+            sameAs: [
+              "https://www.linkedin.com/in/bibeknaryal",
+              "https://github.com/arlbibek",
+            ],
+            email: "bibek@duck.com",
+          }),
+        }}
+      />
     </div>
   );
 }

@@ -1,7 +1,19 @@
 import Image from "next/image";
+import type { Metadata } from "next";
 import getProjects from "./ProjectList";
 import doodle from "../../public/images/doodle.svg";
 import projects_cover from "../../public/images/projects-cover.svg";
+
+export const metadata: Metadata = {
+  title: "Projects | Bibek Aryal",
+  description: "Selected projects by Bibek Aryal.",
+  openGraph: {
+    title: "Projects | Bibek Aryal",
+    description: "Selected projects by Bibek Aryal.",
+    url: "https://bibeka.com.np/projects",
+    type: "website",
+  },
+};
 
 async function fetchRepoData(repoOwner: string, repoName: string) {
   const options = {
@@ -16,7 +28,7 @@ async function fetchRepoData(repoOwner: string, repoName: string) {
       fetch(`https://api.github.com/repos/${repoOwner}/${repoName}`, options),
       fetch(
         `https://api.github.com/repos/${repoOwner}/${repoName}/languages`,
-        options
+        options,
       ),
     ]);
 
@@ -36,11 +48,11 @@ async function fetchRepoData(repoOwner: string, repoName: string) {
     ) {
       // Rate limit reached, handle the error appropriately
       throw new Error(
-        "Rate limit reached. You may need to authenticate your request with a personal access token."
+        "Rate limit reached. You may need to authenticate your request with a personal access token.",
       );
     } else {
       throw new Error(
-        `Request failed: ${repoResponse.statusText}, ${languagesResponse.statusText}`
+        `Request failed: ${repoResponse.statusText}, ${languagesResponse.statusText}`,
       );
     }
   } catch (error: any) {
@@ -53,13 +65,32 @@ export default async function ProjectsPage() {
   const repos = await Promise.all(
     projects.map(async (project: any) => {
       return await fetchRepoData("arlbibek", project.title);
-    })
+    }),
   );
   return (
     <main className="text-gray-800 dark:text-gray-200 text-center lg:text-left p-5 dark:bg-slate-900 font-serif">
       <ProjectHeader />
       <section>
         <div className="container mx-auto p-10 md:py-20 px-0 md:p-10 md:px-0  max-w-5xl ">
+          {/* Certifications */}
+          <div className="relative transform duration-500 bg-transparent max-w-4xl mb-6">
+            <div className="rounded-xl p-5 w-full drop-shadow-xl bg-white transition duration-500 dark:bg-gradient-to-r from-slate-800 to-slate-900 hover:to-slate-800">
+              <div className="text-left">
+                <div className="flex justify-between">
+                  <h2 className="text-3xl font-bold mt-4">
+                    Certifications
+                  </h2>
+                </div>
+                <p className="text-base my-4">
+                  <span className="font-semibold">
+                    ISO/IEC 27001 Lead Auditor
+                  </span>{" "}
+                  — PECB | Feb 2026
+                </p>
+              </div>
+            </div>
+          </div>
+
           {repos.map(
             (repo, index) =>
               repo && (
@@ -147,7 +178,7 @@ export default async function ProjectsPage() {
                     </div>
                   </div>
                 </div>
-              )
+              ),
           )}
         </div>
       </section>
@@ -280,7 +311,7 @@ export async function generateStaticParams() {
   const repos = await Promise.all(
     projects.map(async (project: any) => {
       return await fetchRepoData("arlbibek", project.title);
-    })
+    }),
   );
   return repos;
 }
