@@ -68,7 +68,7 @@ export default function Home() {
                     {"Hi, I'm "}
                   </span>
                   <br className="block sm:hidden" />
-                  {"Bibek Aryal!"}
+                  {"Bibek!"}
                 </h1>
                 <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300 sm:text-center">
                   Information Security and GRC professional with{" "}
