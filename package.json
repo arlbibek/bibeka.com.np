@@ -6,7 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "@headlessui/react": "^1.7.7",
+    "@headlessui/react": "^2.2.9",
     "@heroicons/react": "^2.0.13",
     "@supabase/supabase-js": "^2.100.0",
     "bootstrap-icons": "^1.10.3",
