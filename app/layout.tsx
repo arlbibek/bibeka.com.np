@@ -2,6 +2,7 @@ import "../styles/globals.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import type { Metadata, Viewport } from "next";
 import { Merriweather } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const merriweather = Merriweather({
   weight: "400",
@@ -44,6 +45,7 @@ export default function RootLayout({
     <html lang="en" className={merriweather.variable}>
       <body className="font-serif dark:bg-slate-900 dark:text-white">
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );
