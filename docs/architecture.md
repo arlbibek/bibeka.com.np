@@ -12,7 +12,7 @@
 - `app/` — routes only. Root `/` is the landing page. Shared layout, 404, and error UI live here.
 - `components/LandingFloatingIcons.tsx` — client starfield of security tool icons (Lucide + Simple Icons + a few custom SVGs).
 - `lib/landing-floating-icons.ts` — icon placement, drift, and twinkle config.
-- `styles/globals.css` — landing visual system (black base, lavender/indigo glow wash, float/twinkle keyframes, Helvetica Neue stack, viewport sizing).
+- `styles/globals.css` — landing visual system (black night sky, left-to-right Milky Way lavender band, float/twinkle keyframes, Helvetica Neue stack, viewport sizing).
 - `public/` — static assets (favicon, icons, web manifest).
 - `next.config.js` — short-link redirects (`/github`, `/resume`, etc.).
 

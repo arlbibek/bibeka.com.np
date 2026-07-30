@@ -6,10 +6,10 @@
   color-scheme: dark;
   --bg: #000000;
   --fg: #ffffff;
-  /* lavender / indigo wash — matches original landing blurs (#9089FC → soft pink-lavender) */
-  --glow-a: rgba(144, 137, 252, 0.38);
-  --glow-b: rgba(167, 139, 250, 0.28);
-  --glow-c: rgba(255, 128, 181, 0.18);
+  --mw-lavender: 144, 137, 252;
+  --mw-violet: 167, 139, 250;
+  --mw-rose: 255, 128, 181;
+  --mw-mist: 220, 230, 255;
 }
 
 *,
@@ -42,73 +42,111 @@ body {
   overflow: hidden;
   background:
     radial-gradient(
-      ellipse 80% 55% at 50% -10%,
-      rgba(144, 137, 252, 0.22),
-      transparent 62%
-    ),
-    radial-gradient(
-      ellipse 70% 50% at 80% 80%,
-      rgba(167, 139, 250, 0.12),
-      transparent 65%
-    ),
-    radial-gradient(
-      ellipse 100% 100% at 50% 100%,
-      rgba(10, 12, 20, 1),
-      #000 70%
+      ellipse 120% 80% at 50% 120%,
+      rgba(8, 10, 22, 1),
+      #000 55%
     ),
     #000;
 }
 
-.landing__glow {
+/* Milky Way — left-to-right galactic band across the night sky */
+.landing__milkyway {
   position: absolute;
-  inset: auto;
-  border-radius: 50%;
-  filter: blur(90px);
-  pointer-events: none;
+  inset: 0;
   z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.landing__milkyway-band {
+  position: absolute;
+  left: -20%;
+  top: 28%;
+  width: 140%;
+  height: 42%;
+  transform: rotate(-18deg);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(var(--mw-lavender), 0.06) 8%,
+    rgba(var(--mw-mist), 0.1) 22%,
+    rgba(var(--mw-violet), 0.22) 38%,
+    rgba(var(--mw-mist), 0.28) 50%,
+    rgba(var(--mw-lavender), 0.2) 62%,
+    rgba(var(--mw-rose), 0.1) 78%,
+    rgba(var(--mw-violet), 0.06) 90%,
+    transparent 100%
+  );
+  filter: blur(28px);
+  opacity: 0.9;
+  animation: milkyway-breathe 22s ease-in-out infinite alternate;
+}
+
+.landing__milkyway-core {
+  position: absolute;
+  left: 32%;
+  top: 34%;
+  width: 38%;
+  height: 28%;
+  transform: rotate(-18deg);
+  background: radial-gradient(
+    ellipse 70% 55% at 50% 50%,
+    rgba(var(--mw-mist), 0.45) 0%,
+    rgba(var(--mw-lavender), 0.28) 28%,
+    rgba(var(--mw-violet), 0.12) 55%,
+    transparent 75%
+  );
+  filter: blur(36px);
+  animation: milkyway-core-pulse 18s ease-in-out infinite alternate;
+}
+
+.landing__milkyway-dust {
+  position: absolute;
+  transform: rotate(-18deg);
+  border-radius: 50%;
+  filter: blur(50px);
   will-change: transform, opacity;
 }
 
-.landing__glow--a {
-  width: min(75vw, 75vh);
-  height: min(75vw, 75vh);
-  top: -5%;
-  left: 5%;
+.landing__milkyway-dust--a {
+  left: 8%;
+  top: 38%;
+  width: 28%;
+  height: 18%;
   background: radial-gradient(
-    circle,
-    var(--glow-a) 0%,
-    rgba(144, 137, 252, 0.12) 42%,
+    ellipse at center,
+    rgba(var(--mw-lavender), 0.35) 0%,
     transparent 70%
   );
-  animation: glow-drift-a 14s ease-in-out infinite alternate;
+  animation: milkyway-dust-a 26s ease-in-out infinite alternate;
 }
 
-.landing__glow--b {
-  width: min(95vw, 95vh);
-  height: min(95vw, 95vh);
-  bottom: -15%;
-  right: -5%;
+.landing__milkyway-dust--b {
+  left: 48%;
+  top: 42%;
+  width: 34%;
+  height: 22%;
   background: radial-gradient(
-    circle,
-    var(--glow-b) 0%,
-    rgba(167, 139, 250, 0.08) 45%,
-    transparent 70%
+    ellipse at center,
+    rgba(var(--mw-mist), 0.28) 0%,
+    rgba(var(--mw-violet), 0.14) 40%,
+    transparent 72%
   );
-  animation: glow-drift-b 18s ease-in-out infinite alternate;
+  animation: milkyway-dust-b 30s ease-in-out infinite alternate;
 }
 
-.landing__glow--c {
-  width: min(60vw, 60vh);
-  height: min(60vw, 60vh);
-  top: 40%;
-  left: 40%;
+.landing__milkyway-dust--c {
+  left: 72%;
+  top: 48%;
+  width: 24%;
+  height: 16%;
   background: radial-gradient(
-    circle,
-    var(--glow-c) 0%,
-    rgba(144, 137, 252, 0.1) 40%,
+    ellipse at center,
+    rgba(var(--mw-rose), 0.22) 0%,
+    rgba(var(--mw-lavender), 0.1) 45%,
     transparent 70%
   );
-  animation: glow-drift-c 12s ease-in-out infinite alternate;
+  animation: milkyway-dust-c 24s ease-in-out infinite alternate;
 }
 
 .landing__name {
@@ -137,35 +175,57 @@ body {
   width: 100%;
 }
 
-@keyframes glow-drift-a {
+@keyframes milkyway-breathe {
   from {
-    transform: translate3d(0, 0, 0) scale(1);
-    opacity: 0.7;
+    opacity: 0.72;
+    filter: blur(26px);
   }
   to {
-    transform: translate3d(8%, 12%, 0) scale(1.15);
     opacity: 1;
+    filter: blur(34px);
   }
 }
 
-@keyframes glow-drift-b {
+@keyframes milkyway-core-pulse {
   from {
-    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.75;
+    transform: rotate(-18deg) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(-18deg) scale(1.06);
+  }
+}
+
+@keyframes milkyway-dust-a {
+  from {
+    transform: rotate(-18deg) translate3d(0, 0, 0);
     opacity: 0.55;
   }
   to {
-    transform: translate3d(-10%, -8%, 0) scale(1.2);
+    transform: rotate(-18deg) translate3d(4%, -3%, 0);
     opacity: 0.95;
   }
 }
 
-@keyframes glow-drift-c {
+@keyframes milkyway-dust-b {
   from {
-    transform: translate3d(-5%, 0, 0) scale(0.95);
-    opacity: 0.4;
+    transform: rotate(-18deg) translate3d(0, 0, 0);
+    opacity: 0.5;
   }
   to {
-    transform: translate3d(5%, -10%, 0) scale(1.25);
+    transform: rotate(-18deg) translate3d(-3%, 4%, 0);
+    opacity: 0.9;
+  }
+}
+
+@keyframes milkyway-dust-c {
+  from {
+    transform: rotate(-18deg) translate3d(0, 0, 0);
+    opacity: 0.45;
+  }
+  to {
+    transform: rotate(-18deg) translate3d(3%, 2%, 0);
     opacity: 0.85;
   }
 }
@@ -278,7 +338,9 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .landing__glow {
+  .landing__milkyway-band,
+  .landing__milkyway-core,
+  .landing__milkyway-dust {
     animation: none;
   }
 

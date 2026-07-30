@@ -15,9 +15,13 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main className="landing" aria-label="Bibek Aryal">
-      <div className="landing__glow landing__glow--a" aria-hidden="true" />
-      <div className="landing__glow landing__glow--b" aria-hidden="true" />
-      <div className="landing__glow landing__glow--c" aria-hidden="true" />
+      <div className="landing__milkyway" aria-hidden="true">
+        <div className="landing__milkyway-band" />
+        <div className="landing__milkyway-core" />
+        <div className="landing__milkyway-dust landing__milkyway-dust--a" />
+        <div className="landing__milkyway-dust landing__milkyway-dust--b" />
+        <div className="landing__milkyway-dust landing__milkyway-dust--c" />
+      </div>
       <h1 className="landing__name">
         <span>BIBEK</span>
         <span>ARYAL</span>
