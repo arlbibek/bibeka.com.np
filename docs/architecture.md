@@ -22,5 +22,5 @@
 - **Single page.** Landing only. Other former routes (projects, echo, click) were removed.
 - **Viewport-fit landing.** The page uses `100dvh` / `100svh` with `overflow: hidden` so it never scrolls on any screen size.
 - **Name-first.** Typography fills most of the viewport (`~85–90%`). Brand is the entire composition.
-- **Security starfield.** Floating icons drift and twinkle like stars (same pattern as the Trinity Tech hero). Unlike Trinity, there is no center mask — icons may pass over the name.
+- **Security starfield.** ~230 floating security icons drift and twinkle like stars (Trinity-style). Unlike Trinity, there is no center mask — icons may pass over the name. Icon set lives in `lib/landing-floating-icons.ts`.
 - **Font.** Helvetica Neue is proprietary and not redistributed. The site uses the system stack `"Helvetica Neue", Helvetica, Arial, sans-serif` so Apple devices get Neue and others fall back cleanly.
