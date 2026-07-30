@@ -6,9 +6,10 @@
   color-scheme: dark;
   --bg: #000000;
   --fg: #ffffff;
-  --glow-a: rgba(255, 255, 255, 0.14);
-  --glow-b: rgba(180, 190, 210, 0.1);
-  --glow-c: rgba(120, 140, 170, 0.08);
+  /* lavender / indigo wash — matches original landing blurs (#9089FC → soft pink-lavender) */
+  --glow-a: rgba(144, 137, 252, 0.38);
+  --glow-b: rgba(167, 139, 250, 0.28);
+  --glow-c: rgba(255, 128, 181, 0.18);
 }
 
 *,
@@ -40,8 +41,21 @@ body {
   height: 100svh;
   overflow: hidden;
   background:
-    radial-gradient(ellipse 80% 60% at 50% 40%, rgba(28, 32, 40, 0.9), transparent 70%),
-    radial-gradient(ellipse 100% 100% at 50% 100%, rgba(10, 12, 16, 1), #000 70%),
+    radial-gradient(
+      ellipse 80% 55% at 50% -10%,
+      rgba(144, 137, 252, 0.22),
+      transparent 62%
+    ),
+    radial-gradient(
+      ellipse 70% 50% at 80% 80%,
+      rgba(167, 139, 250, 0.12),
+      transparent 65%
+    ),
+    radial-gradient(
+      ellipse 100% 100% at 50% 100%,
+      rgba(10, 12, 20, 1),
+      #000 70%
+    ),
     #000;
 }
 
@@ -49,36 +63,51 @@ body {
   position: absolute;
   inset: auto;
   border-radius: 50%;
-  filter: blur(80px);
+  filter: blur(90px);
   pointer-events: none;
   z-index: 0;
   will-change: transform, opacity;
 }
 
 .landing__glow--a {
-  width: min(70vw, 70vh);
-  height: min(70vw, 70vh);
-  top: 10%;
-  left: 15%;
-  background: var(--glow-a);
+  width: min(75vw, 75vh);
+  height: min(75vw, 75vh);
+  top: -5%;
+  left: 5%;
+  background: radial-gradient(
+    circle,
+    var(--glow-a) 0%,
+    rgba(144, 137, 252, 0.12) 42%,
+    transparent 70%
+  );
   animation: glow-drift-a 14s ease-in-out infinite alternate;
 }
 
 .landing__glow--b {
-  width: min(90vw, 90vh);
-  height: min(90vw, 90vh);
-  bottom: -10%;
-  right: 5%;
-  background: var(--glow-b);
+  width: min(95vw, 95vh);
+  height: min(95vw, 95vh);
+  bottom: -15%;
+  right: -5%;
+  background: radial-gradient(
+    circle,
+    var(--glow-b) 0%,
+    rgba(167, 139, 250, 0.08) 45%,
+    transparent 70%
+  );
   animation: glow-drift-b 18s ease-in-out infinite alternate;
 }
 
 .landing__glow--c {
-  width: min(55vw, 55vh);
-  height: min(55vw, 55vh);
-  top: 45%;
-  left: 45%;
-  background: var(--glow-c);
+  width: min(60vw, 60vh);
+  height: min(60vw, 60vh);
+  top: 40%;
+  left: 40%;
+  background: radial-gradient(
+    circle,
+    var(--glow-c) 0%,
+    rgba(144, 137, 252, 0.1) 40%,
+    transparent 70%
+  );
   animation: glow-drift-c 12s ease-in-out infinite alternate;
 }
 
