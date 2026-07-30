@@ -151,7 +151,7 @@ body {
 
 .landing__name {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -230,9 +230,22 @@ body {
   }
 }
 
-/* Floating security icons — full viewport, may overlay the name (no center mask) */
+/* Floating security icons — behind the name; center masked so they stay in the sky margins */
 .landing-floating-icons {
-  /* intentionally unmasked so icons pass over BIBEK / ARYAL */
+  mask-image: radial-gradient(
+    ellipse 78% 72% at 50% 50%,
+    transparent 0%,
+    transparent 38%,
+    rgba(0, 0, 0, 0.2) 55%,
+    black 78%
+  );
+  -webkit-mask-image: radial-gradient(
+    ellipse 78% 72% at 50% 50%,
+    transparent 0%,
+    transparent 38%,
+    rgba(0, 0, 0, 0.2) 55%,
+    black 78%
+  );
 }
 
 /* Drift on the wrapper only — never put opacity here or the glow is multiplied down */

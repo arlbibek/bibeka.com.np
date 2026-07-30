@@ -18,4 +18,4 @@
 - Viewport units: prefer `dvh`/`svh` over `vh` so mobile browser chrome does not cause scroll.
 - Short-link redirects live in `next.config.js`, not as app routes.
 - Floating icon placements live in `lib/landing-floating-icons.ts`. Opacity must stay on the base/glow layers, not the float wrapper, or twinkle gets dimmed.
-- Do not reintroduce a center radial mask on `.landing-floating-icons` — icons are meant to cross the name.
+- Keep the center radial mask on `.landing-floating-icons` so icons do not sit over the name.

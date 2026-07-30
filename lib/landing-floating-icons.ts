@@ -588,7 +588,7 @@ function buildFloatingIcons(seeds: IconSeed[]): FloatingIconSpec[] {
   });
 }
 
-/** Full-viewport starfield; icons may overlay the name. */
+/** Full-viewport starfield; center-masked so icons stay behind the name. */
 export const LANDING_FLOATING_ICONS: FloatingIconSpec[] =
   buildFloatingIcons(SECURITY_ICON_SEEDS);
 
