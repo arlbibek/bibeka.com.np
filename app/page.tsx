@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import LandingFloatingIcons from "@/components/LandingFloatingIcons";
 
 export const metadata: Metadata = {
   title: "Bibek Aryal",
@@ -21,6 +22,7 @@ export default function Home() {
         <span>BIBEK</span>
         <span>ARYAL</span>
       </h1>
+      <LandingFloatingIcons />
     </main>
   );
 }

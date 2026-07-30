@@ -27,3 +27,7 @@ Open [http://localhost:3000](http://localhost:3000).
 ## Environment variables
 
 None required. This is a static frontend with no secrets.
+
+## Dependencies of note
+
+- `lucide-react` / `react-icons` — security tool icons for the landing starfield.

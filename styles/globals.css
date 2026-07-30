@@ -141,8 +141,125 @@ body {
   }
 }
 
+/* Floating security icons — full viewport, may overlay the name (no center mask) */
+.landing-floating-icons {
+  /* intentionally unmasked so icons pass over BIBEK / ARYAL */
+}
+
+/* Drift on the wrapper only — never put opacity here or the glow is multiplied down */
+@keyframes landing-icon-float {
+  0% {
+    transform: translate(-50%, -50%) rotate(var(--float-rotate, 0deg));
+  }
+  20% {
+    transform: translate(
+        calc(-50% + var(--float-drift-x, 4px)),
+        calc(-50% + var(--float-drift-y, -4px))
+      )
+      rotate(calc(var(--float-rotate, 0deg) + 2deg));
+  }
+  40% {
+    transform: translate(
+        calc(-50% + var(--float-drift-x-alt, 2px)),
+        calc(-50% - var(--float-drift-y-alt, 2px))
+      )
+      rotate(calc(var(--float-rotate, 0deg) - 0.5deg));
+  }
+  60% {
+    transform: translate(
+        calc(-50% - var(--float-drift-x-alt, 2px)),
+        calc(-50% + var(--float-drift-y-alt, -2px))
+      )
+      rotate(calc(var(--float-rotate, 0deg) - 2deg));
+  }
+  80% {
+    transform: translate(
+        calc(-50% - var(--float-drift-x, 4px)),
+        calc(-50% - var(--float-drift-y, -4px))
+      )
+      rotate(calc(var(--float-rotate, 0deg) + 0.8deg));
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(var(--float-rotate, 0deg));
+  }
+}
+
+@keyframes landing-icon-base-pulse {
+  0%,
+  100% {
+    opacity: var(--float-opacity-min, 0.14);
+  }
+  50% {
+    opacity: var(--float-opacity-max, 0.28);
+  }
+}
+
+@keyframes landing-icon-white-fade {
+  0%,
+  28%,
+  72%,
+  100% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0.55;
+  }
+}
+
+.landing-floating-icon {
+  animation: landing-icon-float var(--float-duration, 44s) ease-in-out infinite;
+  animation-delay: var(--float-delay, 0s);
+  will-change: transform;
+}
+
+.landing-floating-icon-base {
+  display: inline-flex;
+  opacity: var(--float-opacity-min, 0.18);
+  animation: landing-icon-base-pulse var(--float-duration, 44s) ease-in-out
+    infinite;
+  animation-delay: var(--float-delay, 0s);
+  will-change: opacity;
+}
+
+.landing-floating-icon-glow {
+  position: absolute;
+  inset: 0;
+  display: inline-flex;
+  color: var(--fg);
+  opacity: 0;
+  pointer-events: none;
+  animation: landing-icon-white-fade var(--twinkle-duration, 16s) ease-in-out
+    infinite;
+  animation-delay: var(--twinkle-delay, 0s);
+  filter: drop-shadow(
+    0 0 10px color-mix(in srgb, var(--fg) 55%, transparent)
+  );
+  will-change: opacity;
+}
+
+.landing-floating-icon-glow svg {
+  width: 100%;
+  height: 100%;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .landing__glow {
     animation: none;
+  }
+
+  .landing-floating-icon,
+  .landing-floating-icon-base {
+    animation: none;
+  }
+
+  .landing-floating-icon-glow {
+    animation: none;
+    opacity: 0;
   }
 }

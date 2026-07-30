@@ -15,6 +15,7 @@
 
 - Black glowing gradient background, white text.
 - Name covers ~80–90% of the viewport on all screen sizes; page must not scroll (`100dvh`/`100svh`, overflow hidden).
+- Floating security icons starfield (Trinity-style float + twinkle). Icons may overlay the name — do not add a center mask that hides them.
 - Font stack: `"Helvetica Neue", Helvetica, Arial, sans-serif` (system; do not ship proprietary font files).
 
 ## Docs
