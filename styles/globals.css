@@ -160,7 +160,6 @@ body {
   width: 90vw;
   height: 85dvh;
   height: 85svh;
-  color: rgba(255, 255, 255, 0.78);
   font-weight: 700;
   font-size: min(22vw, 38vh);
   line-height: 0.9;
@@ -168,11 +167,48 @@ body {
   text-align: center;
   text-transform: uppercase;
   user-select: none;
+  /* Soft base + sweeping highlight (Trinity promo-banner shine, dark-sky adapted) */
+  background-image: linear-gradient(
+    105deg,
+    rgba(255, 255, 255, 0.55) 0%,
+    rgba(255, 255, 255, 0.55) 38%,
+    #fafafa 48%,
+    rgba(200, 190, 255, 0.95) 52%,
+    rgba(255, 255, 255, 0.55) 62%,
+    rgba(255, 255, 255, 0.55) 100%
+  );
+  background-size: 220% 100%;
+  background-position: 100% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 12px rgba(200, 190, 255, 0.22));
+  animation: landing-name-shine 3.6s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+  will-change: background-position, filter;
 }
 
 .landing__name span {
   display: block;
   width: 100%;
+}
+
+@keyframes landing-name-shine {
+  0%,
+  12% {
+    background-position: 100% 50%;
+    filter: drop-shadow(0 0 8px rgba(200, 190, 255, 0.14));
+  }
+  45%,
+  55% {
+    background-position: 0% 50%;
+    filter: drop-shadow(0 0 18px rgba(220, 214, 255, 0.4));
+  }
+  88%,
+  100% {
+    background-position: -100% 50%;
+    filter: drop-shadow(0 0 8px rgba(200, 190, 255, 0.14));
+  }
 }
 
 @keyframes milkyway-breathe {
@@ -355,6 +391,16 @@ body {
   .landing__milkyway-core,
   .landing__milkyway-dust {
     animation: none;
+  }
+
+  .landing__name {
+    animation: none;
+    background-image: none;
+    background-clip: border-box;
+    -webkit-background-clip: border-box;
+    color: rgba(255, 255, 255, 0.78);
+    -webkit-text-fill-color: rgba(255, 255, 255, 0.78);
+    filter: none;
   }
 
   .landing-floating-icon,
