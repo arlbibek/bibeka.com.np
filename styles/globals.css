@@ -160,7 +160,7 @@ body {
   width: 90vw;
   height: 85dvh;
   height: 85svh;
-  color: var(--fg);
+  color: rgba(255, 255, 255, 0.78);
   font-weight: 700;
   font-size: min(22vw, 38vh);
   line-height: 0.9;
