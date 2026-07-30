@@ -1,26 +1,18 @@
 import "../styles/globals.css";
-import "bootstrap-icons/font/bootstrap-icons.css";
 import type { Metadata, Viewport } from "next";
-import { Merriweather } from "next/font/google";
-
-const merriweather = Merriweather({
-  weight: "400",
-  variable: "--font-merriweather",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Bibek Aryal",
-  description:
-    "Portfolio of Bibek Aryal, information security and GRC professional.",
+  description: "Bibek Aryal",
   metadataBase: new URL("https://bibeka.com.np"),
   manifest: "/manifest.json",
   authors: [{ name: "Bibek Aryal" }],
-  keywords: ["Bibek", "Aryal", "Information Security", "GRC", "Nepal"],
+  keywords: ["Bibek", "Aryal", "bibeka.com.np"],
   openGraph: {
     siteName: "Bibek Aryal",
     type: "website",
     url: "https://bibeka.com.np",
+    title: "Bibek Aryal",
   },
   icons: {
     icon: "/images/favicon.ico",
@@ -29,9 +21,10 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#1c1b22",
+  themeColor: "#000000",
   width: "device-width",
   initialScale: 1,
+  maximumScale: 1,
   viewportFit: "cover",
 };
 
@@ -41,10 +34,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={merriweather.variable}>
-      <body className="font-serif dark:bg-slate-900 dark:text-white">
-        {children}
-      </body>
+    <html lang="en">
+      <body>{children}</body>
     </html>
   );
 }

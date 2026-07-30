@@ -1,20 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-    "./app/**/*.{js,ts,jsx,tsx}",
-  ],
-  // darkMode: "class",
+  content: ["./app/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      colors: {
-        "my-yellow": "#b0914f",
+      fontFamily: {
+        sans: [
+          '"Helvetica Neue"',
+          "Helvetica",
+          "Arial",
+          "sans-serif",
+        ],
       },
-    },
-    fontFamily: {
-      serif: ["var(--font-merriweather)"],
-      mono: ["Consolas", "Courier New", "monospace"],
     },
   },
   plugins: [],

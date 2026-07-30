@@ -2,8 +2,150 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  a {
-    @apply hover:brightness-110 active:brightness-125;
+:root {
+  color-scheme: dark;
+  --bg: #000000;
+  --fg: #ffffff;
+  --glow-a: rgba(255, 255, 255, 0.14);
+  --glow-b: rgba(180, 190, 210, 0.1);
+  --glow-c: rgba(120, 140, 170, 0.08);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.landing {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  height: 100dvh;
+  height: 100svh;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 40%, rgba(28, 32, 40, 0.9), transparent 70%),
+    radial-gradient(ellipse 100% 100% at 50% 100%, rgba(10, 12, 16, 1), #000 70%),
+    #000;
+}
+
+.landing__glow {
+  position: absolute;
+  inset: auto;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+  will-change: transform, opacity;
+}
+
+.landing__glow--a {
+  width: min(70vw, 70vh);
+  height: min(70vw, 70vh);
+  top: 10%;
+  left: 15%;
+  background: var(--glow-a);
+  animation: glow-drift-a 14s ease-in-out infinite alternate;
+}
+
+.landing__glow--b {
+  width: min(90vw, 90vh);
+  height: min(90vw, 90vh);
+  bottom: -10%;
+  right: 5%;
+  background: var(--glow-b);
+  animation: glow-drift-b 18s ease-in-out infinite alternate;
+}
+
+.landing__glow--c {
+  width: min(55vw, 55vh);
+  height: min(55vw, 55vh);
+  top: 45%;
+  left: 45%;
+  background: var(--glow-c);
+  animation: glow-drift-c 12s ease-in-out infinite alternate;
+}
+
+.landing__name {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90vw;
+  height: 85dvh;
+  height: 85svh;
+  color: var(--fg);
+  font-weight: 700;
+  font-size: min(22vw, 38vh);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  text-align: center;
+  text-transform: uppercase;
+  user-select: none;
+  text-shadow:
+    0 0 40px rgba(255, 255, 255, 0.18),
+    0 0 80px rgba(255, 255, 255, 0.08);
+}
+
+.landing__name span {
+  display: block;
+  width: 100%;
+}
+
+@keyframes glow-drift-a {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.7;
+  }
+  to {
+    transform: translate3d(8%, 12%, 0) scale(1.15);
+    opacity: 1;
+  }
+}
+
+@keyframes glow-drift-b {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.55;
+  }
+  to {
+    transform: translate3d(-10%, -8%, 0) scale(1.2);
+    opacity: 0.95;
+  }
+}
+
+@keyframes glow-drift-c {
+  from {
+    transform: translate3d(-5%, 0, 0) scale(0.95);
+    opacity: 0.4;
+  }
+  to {
+    transform: translate3d(5%, -10%, 0) scale(1.25);
+    opacity: 0.85;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .landing__glow {
+    animation: none;
   }
 }

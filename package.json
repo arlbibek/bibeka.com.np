@@ -3,17 +3,13 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@headlessui/react": "^2.2.9",
-    "@heroicons/react": "^2.0.13",
-    "@supabase/supabase-js": "^2.100.0",
-    "bootstrap-icons": "^1.10.3",
     "next": "^16.1.6",
     "react": "^19.2.4",
-    "react-dom": "^19.2.4",
-    "zod": "^4.3.6"
+    "react-dom": "^19.2.4"
   },
   "devDependencies": {
     "@types/node": "18.11.3",

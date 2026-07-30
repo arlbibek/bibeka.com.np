@@ -2,26 +2,22 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <section className="bg-white dark:bg-gray-900">
-      <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-        <div className="mx-auto max-w-screen-sm text-center">
-          <h1 className="mb-4 text-7xl tracking-tight font-extrabold lg:text-9xl text-primary-600 dark:text-primary-500">
-            404
-          </h1>
-          <p className="mb-4 text-3xl tracking-tight font-bold text-gray-900 md:text-4xl dark:text-white">
-            {"Page not found"}
-          </p>
-          <p className="mb-4 text-lg font-light text-gray-500 dark:text-gray-400">
-            {"Sorry, we couldn't find the page you're looking for."}
-          </p>
-          <Link
-            href="/"
-            className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-          >
-            Go back home
-          </Link>
-        </div>
+    <main className="landing">
+      <div className="landing__glow landing__glow--a" aria-hidden="true" />
+      <div className="relative z-10 text-center px-6">
+        <p className="text-sm tracking-[0.3em] uppercase text-white/50 mb-4">
+          404
+        </p>
+        <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-white mb-8">
+          Not found
+        </h1>
+        <Link
+          href="/"
+          className="text-sm tracking-widest uppercase text-white/70 hover:text-white transition-colors"
+        >
+          Back
+        </Link>
       </div>
-    </section>
+    </main>
   );
 }

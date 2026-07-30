@@ -1,30 +1,26 @@
-"use client"; // Error components must be Client Components
-
-import { useEffect } from "react";
+"use client";
 
 export default function Error({
-  error,
   reset,
 }: {
   error: Error & { digest?: string };
   reset: () => void;
 }) {
-  useEffect(() => {
-    // Log the error to an error reporting service
-    console.error(error);
-  }, [error]);
-
   return (
-    <div>
-      <h2>Something went wrong!</h2>
-      <button
-        onClick={
-          // Attempt to recover by trying to re-render the segment
-          () => reset()
-        }
-      >
-        Try again
-      </button>
-    </div>
+    <main className="landing">
+      <div className="landing__glow landing__glow--b" aria-hidden="true" />
+      <div className="relative z-10 text-center px-6">
+        <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-white mb-8">
+          Something went wrong
+        </h1>
+        <button
+          type="button"
+          onClick={() => reset()}
+          className="text-sm tracking-widest uppercase text-white/70 hover:text-white transition-colors"
+        >
+          Try again
+        </button>
+      </div>
+    </main>
   );
 }

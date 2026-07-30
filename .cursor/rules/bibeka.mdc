@@ -1,0 +1,23 @@
+# bibeka.com.np — agent constraints
+
+## Product
+
+- Personal site: single viewport-locked landing page with name "BIBEK / ARYAL".
+- No backend, no database, no Supabase, no auth, no forms unless explicitly requested.
+- Do not reintroduce `/projects`, `/echo`, `/click`, or similar multi-page portfolio features without an explicit ask.
+
+## Stack
+
+- Next.js App Router + React + Tailwind + custom CSS for landing.
+- Static-export-friendly / DB-free by default. Flag before adding a backend or DB.
+
+## Visual
+
+- Black glowing gradient background, white text.
+- Name covers ~80–90% of the viewport on all screen sizes; page must not scroll (`100dvh`/`100svh`, overflow hidden).
+- Font stack: `"Helvetica Neue", Helvetica, Arial, sans-serif` (system; do not ship proprietary font files).
+
+## Docs
+
+- Keep `docs/` accurate when setup, architecture, or deploy steps change.
+- This `.mdc` is agent constraints; `docs/` is human explanation — one fact, one owner.
